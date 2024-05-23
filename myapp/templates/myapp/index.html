@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick and Morty por Daniel Bacab</title>
+
+    <style>
+        *{
+            background-color: greenyellow;
+        }
+        h1{
+        
+        align-items: center;
+        justify-content: center;
+        color: grey;
+        }
+        .tarjeta {
+            width: 40%;
+            height: 30%;
+            background-color: lightgray;
+            margin: 10px;
+            float: left;
+        }
+
+        .tarjeta img {
+            width: 100%;
+            height: 70%;
+            float: left;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <h1>Rick and Morty por Daniel Bacab</h1>
+    {% for personaje in info_personajes %}
+    <div class="tarjeta">
+        <img src="{{ personaje.imagen_url }}" alt="{{ personaje.nombre }}">
+        <div class="info">
+            <p>Nombre: {{ personaje.nombre }}</p>
+            <p>Origen: {{ personaje.origen }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</body>
+</html>
