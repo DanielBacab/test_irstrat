@@ -18,7 +18,6 @@
         .tarjeta {
             width: 40%;
             height: 30%;
-            background-color: lightgray;
             margin: 10px;
             float: left;
         }
@@ -28,7 +27,14 @@
             height: 70%;
             float: left;
         }
-        
+    
+
+        #bold{
+           
+            font-size: 100%;
+            font-weight: bold;
+            color: black;
+        }
         
     </style>
 </head>
@@ -38,8 +44,8 @@
     <div class="tarjeta">
         <img src="{{ personaje.imagen_url }}" alt="{{ personaje.nombre }}">
         <div class="info">
-            <p>Nombre: {{ personaje.nombre }}</p>
-            <p>Origen: {{ personaje.origen }}</p>
+            <p><div id="bold">Nombre: </div>{{ personaje.nombre }}</p>
+            <p><div id="bold">Origen: </div>{{ personaje.origen }}</p>
         </div>
     </div>
     {% endfor %}
