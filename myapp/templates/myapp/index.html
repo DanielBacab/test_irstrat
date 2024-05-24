@@ -7,40 +7,95 @@
 
     <style>
         *{
-            background-color: greenyellow;
-        }
+           background-color: #272b34; 
+        } 
         h1{
-        
-        align-items: center;
-        justify-content: center;
-        color: grey;
+            text-align: center;
+            background-color: white;
+             color: #20232a;
+             padding: 3%;
+            font-size: 80px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            border-radius: 25px;
+            width: 85vw;
+            box-shadow: 
+                0px 0px 0px 10px #c0df40, /* Borde inferior derecho */
+                0px 0px 0px 10px #c0df40, /* Borde inferior izquierdo */
+                0px 0px 0px 10px #c0df40, /* Borde superior derecho */
+                0px 0px 0px 10px #c0df40;
         }
+        .title{
+            color: #40b5cb;
+            background-color: white;
+            text-shadow:  3px 3px 0px #c0df40, /* Borde inferior derecho */
+                -3px 3px 0px #c0df40, /* Borde inferior izquierdo */
+                3px -3px 0px #c0df40, /* Borde superior derecho */
+                -3px -3px 0px #c0df40;
+        }
+        .author{
+            color: #40b5cb;
+            background-color: white;
+            text-shadow:  3px 3px 0px #c0df40, /* Borde inferior derecho */
+                -3px 3px 0px #c0df40, /* Borde inferior izquierdo */
+                3px -3px 0px #c0df40, /* Borde superior derecho */
+                -3px -3px 0px #c0df40;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            min-width: 100vw;
+            align-items: center;
+            
+        }
+
+        .content{
+            justify-content: center;
+            width: 85vw;
+        }
+
         .tarjeta {
-            width: 40%;
-            height: 30%;
-            margin: 10px;
+            display: flex;
+            flex-direction: row;
+            width: 40vw;
+            height: 10vw;
+            margin: 15px;
             float: left;
+            background-color: #3d3e43;
+            border-radius: 25px;
         }
+       
 
         .tarjeta img {
-            width: 100%;
-            height: 70%;
+          
+            width: 30%;
+            height: 100%;
             float: left;
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px; 
+      
         }
-    
+        .info{
+        background-color: #3d3e43;
+           margin-left: 25px;
+           color: #f5f3f1;
+           font-size: 2vh;
+            
+        }
 
         #bold{
-           
-            font-size: 100%;
+            background-color: #3d3e43;
+            font-size: 3vh;
             font-weight: bold;
-            color: black;
+            color: #9d9ea2;
+           
         }
         
     </style>
 </head>
 <body>
-    <h1>Rick and Morty por Daniel Bacab</h1>
-    {% for personaje in info_personajes %}
+    <h1><span class="title">Rick and Morty</span> por <span class="author">Daniel Bacab</span></h1>
+    <div class="content">
+        {% for personaje in info_personajes %}
     <div class="tarjeta">
         <img src="{{ personaje.imagen_url }}" alt="{{ personaje.nombre }}">
         <div class="info">
@@ -49,5 +104,6 @@
         </div>
     </div>
     {% endfor %}
+    </div>
 </body>
 </html>
